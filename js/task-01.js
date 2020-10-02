@@ -1,4 +1,4 @@
-/*const totalCategories = document.querySelectorAll('.item');
+const totalCategories = document.querySelectorAll('.item');
 console.log(`В списке ${totalCategories.length} категории.`);
 
 const categoriesArr = [...totalCategories]
@@ -7,4 +7,4 @@ const categoriesArr = [...totalCategories]
 Количество элементов: ${categories.children[1].children.length}`,
     )
     .join('\n');
-console.log(categoriesArr);*/
+console.log(categoriesArr);

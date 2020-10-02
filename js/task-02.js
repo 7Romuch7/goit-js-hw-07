@@ -1,4 +1,4 @@
-/*const ingredients = [
+const ingredients = [
     'Картошка',
     'Грибы',
     'Чеснок',
@@ -13,4 +13,4 @@ const items = ingredients.map(ingredient => {
     return liEl;
 });
 console.log(items);
-ulList.append(...items);*/
+ulList.append(...items);

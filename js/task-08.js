@@ -1,10 +1,30 @@
-/*const getUsersWithFriend = (array, friendName) =>
-    array
-        .filter(({ friends }) => friends.includes(friendName))
-        .map(({ name }) => name);
+const refs = {
+    renderBtn: document.querySelector('[data-action="render"]'),
+    destroyBtn: document.querySelector('[data-action="destroy"]'),
+    boxes: document.querySelector('#boxes'),
+};
+refs.renderBtn.addEventListener('click', onRenderBtnClick);
+refs.destroyBtn.addEventListener('click', onDestroyBtnClick);
 
-console.log(getUsersWithFriend(users, 'Briana Decker'));
-// [ 'Sharlene Bush', 'Sheree Anthony' ]
+function onRenderBtnClick() {
+    let amount = document.querySelector('#controls input').value;
+    createBoxes(amount);
+}
 
-console.log(getUsersWithFriend(users, 'Goldie Gentry'));
-// [ 'Elma Head', 'Sheree Anthony' ]*/
+function createBoxes(amount) {
+    let firstSize = 30;
+    let fragment = document.createDocumentFragment();
+    for (let i = 0; i < amount; i++) {
+        let size = firstSize + i * 10;
+        let div = document.createElement('div');
+        div.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
+        fragment.appendChild(div);
+    }
+    boxes.appendChild(fragment);
+}
+function random() {
+    return Math.floor(Math.random() * 256);
+}
+function onDestroyBtnClick(event) {
+    boxes.innerHTML = '';
+}
